@@ -17,6 +17,23 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
+            "allowedCommonJsDependencies": [
+              "@angularclass/hmr",
+              "moment",
+              "moment/locale/zh-cn",
+              "jquery",
+              "handsontable",
+              "@feathersjs/socketio-client",
+              "@feathersjs/rest-client",
+              "@feathersjs/feathers",
+              "@feathersjs/authentication-client",
+              "socket.io-client",
+              "xlsx",
+              "axios",
+              "rxjs",
+              "pikaday",
+              "ng2-flatpickr"
+            ],
             "outputPath": "dist/lession01",
             "index": "src/index.html",
             "main": "src/main.ts",
@@ -28,6 +45,7 @@
               "src/assets"
             ],
             "styles": [
+              "./node_modules/@angular/material/prebuilt-themes/indigo-pink.css",
               "src/styles.scss"
             ],
             "scripts": []
@@ -92,6 +110,7 @@
               "src/assets"
             ],
             "styles": [
+              "./node_modules/@angular/material/prebuilt-themes/indigo-pink.css",
               "src/styles.scss"
             ],
             "scripts": []
@@ -123,6 +142,7 @@
           }
         }
       }
-    }},
+    }
+  },
   "defaultProject": "lession01"
 }

@@ -1,1 +1,19 @@
 /* You can add global styles to this file, and also import other style files */
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+.alert_remind{
+  font-weight: 600;
+  background:#D7CCC8;
+  padding: 5px 0px;
+  color:#795548;
+}
+
+.backremind{
+  font-weight: 600;
+  background:#D7CCC8;
+  padding: 15px 0px;
+  text-align: center;
+  color:#795548;
+}

@@ -1,0 +1,53 @@
+<div class="backgounds">
+  <form class="login_form" (ngSubmit)="doLogin()" #loginForm="ngForm">
+    <mat-label class="login_title">用户登录</mat-label>
+
+    <mat-form-field class="field_class">
+      <mat-label>邮箱</mat-label>
+      <input [(ngModel)]="LoginForm.email" ngModel required email #email="ngModel" name="email" matInput type="email"
+        placeholder="请输入邮箱">
+    </mat-form-field>
+
+    <div *ngIf="email.invalid&&(email.dirty||email.touched)" class="alert_remind">
+      <div class="alert alert-danger">
+        <div *ngIf="email.errors.required">
+          请输入邮箱
+        </div>
+        <div *ngIf="email.errors.email">
+          请输入正确的邮箱格式
+        </div>
+      </div>
+    </div>
+    <mat-form-field class="field_class">
+      <mat-label>密码</mat-label>
+      <input [(ngModel)]="LoginForm.password" ngModel #password="ngModel" required minlength="8" name="password"
+        matInput type="password" placeholder="请输入密码">
+    </mat-form-field>
+    <div *ngIf="password.invalid&&(password.dirty||password.touched)" class="alert_remind">
+      <div class="alert alert-danger">
+        <div *ngIf="password.errors.required">
+          请输入密码
+        </div>
+        <div *ngIf="password.errors.minlength">
+          至少输入8位
+        </div>
+      </div>
+    </div>
+
+    <div [hidden]="renden">
+      <div class="backremind">
+        <div class="alert alert-danger">
+        用户名或密码不正确,请重新输入！
+      </div>
+    </div>
+
+    </div>
+
+    <div class="button">
+      <button type="submit" mat-raised-button color="primary" [disabled]="!loginForm.form.valid">登录</button>
+      <button mat-raised-button color="primary" (click)="doRegister()" class="button_distance">注册</button>
+
+    </div>
+
+  </form>
+</div>
